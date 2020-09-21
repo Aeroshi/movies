@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="summary">Summary</string>
+    <string name="critic">" Movie review"</string>
+    <string name="favorite">Favorite</string>
+    <string name="share">Share</string>
+    <string name="read_more">Read More</string>
+    <string name="save">Save</string>
+    <string name="error_movies">Error on get movies, refresh and try again.</string>
+    <string name="error_details">Error on set details movie!!</string>
+    <string name="favorites">Favorites</string>
+</resources>
