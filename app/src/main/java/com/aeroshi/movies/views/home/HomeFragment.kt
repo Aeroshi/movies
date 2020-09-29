@@ -12,11 +12,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.aeroshi.movies.R
-import com.aeroshi.movies.data.Result
+import com.aeroshi.movies.data.AppDatabase
+import com.aeroshi.movies.data.MoviesRepository
+import com.aeroshi.movies.data.entitys.Result
 import com.aeroshi.movies.databinding.FragmentHomeBinding
 import com.aeroshi.movies.util.AdapterUtil
 import com.aeroshi.movies.util.ErrorType
-import com.aeroshi.movies.util.ioThread
+import com.aeroshi.movies.util.Executors.Companion.ioThread
+import com.aeroshi.movies.util.enuns.AdapterType
 import com.aeroshi.movies.viewmodels.HomeViewModel
 import com.aeroshi.movies.viewmodels.MainViewModel
 import com.aeroshi.movies.views.MainActivity
@@ -64,9 +67,21 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
 
     override fun onRefresh() {
         mBinding.swipeRefresh.isRefreshing = false
-        mViewModel.mItens.value = 20
         mAdapter.movies.clear()
-        ioThread { mViewModel.doMovies() }
+
+        ioThread {
+            mMainActivity.applicationContext.let { context ->
+
+                val configManagerRepository = MoviesRepository.getInstance(
+                    AppDatabase.getInstance(context).MoviesDao()
+                )
+                configManagerRepository.deleteAll()
+
+                mViewModel.doMovies(context)
+
+            }
+        }
+
     }
 
     override fun onStop() {
@@ -105,7 +120,21 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
         mBinding.swipeRefresh.setOnRefreshListener(this)
         mBinding.viewModel = mViewModel
         setAdapter()
-        ioThread { mViewModel.doMovies() }
+
+        ioThread {
+            mMainActivity.applicationContext.let { context ->
+
+                val configManagerRepository = MoviesRepository.getInstance(
+                    AppDatabase.getInstance(context).MoviesDao()
+                )
+                val movies = configManagerRepository.getMovies() as ArrayList<Result>
+                if (movies.isNullOrEmpty()) {
+                    mViewModel.doMovies(context)
+                } else {
+                    mViewModel.mMoviesResult.postValue(Pair(movies, ErrorType.NONE))
+                }
+            }
+        }
         setupClickEvents()
     }
 
@@ -113,12 +142,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     private fun observeMoviesResult(): Observer<Pair<ArrayList<Result>?, ErrorType>> {
         return Observer { resultPair ->
             if (resultPair.second == ErrorType.NONE) {
-                if (mViewModel.mItens.value!! < 200) {
-                    mViewModel.mItens.value?.let { mViewModel.mItens.apply { value = it.plus(20) } }
-                    ioThread { mViewModel.doMovies() }
-                } else {
-                    mViewModel.mLoading.value = false
-                }
+                mViewModel.mLoading.value = false
                 mAdapter.update(resultPair.first!!)
             } else {
                 KToast.errorToast(
@@ -132,6 +156,10 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
     }
 
     private fun setupClickEvents() {
+        //TODO Implementar o carregar mais filmes
+        mBinding.buttonMore.setOnClickListener {
+
+        }
     }
 
     private fun setAdapter() {
@@ -139,7 +167,7 @@ class HomeFragment : Fragment(), SwipeRefreshLayout.OnRefreshListener {
             mMainActivity.applicationContext,
             200F
         )
-        mAdapter = MoviesAdapter(mMainActivity.applicationContext, mMainViewModel, mMainActivity)
+        mAdapter = MoviesAdapter(mMainViewModel, mMainActivity, AdapterType.HOME)
         mGridLayoutManager = GridLayoutManager(mMainActivity.applicationContext, mNoOfColumns)
         mBinding.recyclerViewMovies.layoutManager = mGridLayoutManager
         mBinding.recyclerViewMovies.adapter = mAdapter

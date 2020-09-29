@@ -5,9 +5,10 @@ import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class MovieReposiyory {
+class MovieRepository {
 
-    fun getMovies(apiKey: String, offset: Int): Single<String> {
+
+    fun doMovies(apiKey: String, offset: Int): Single<String> {
         return NetworkAPI.getMovieService()
             .getMovies(apiKey, offset)
             .subscribeOn(Schedulers.io())

@@ -1,4 +1,5 @@
-package com.aeroshi.movies.data
+package com.aeroshi.movies.data.entitys
+
 
 data class Movies(
     val status: String,

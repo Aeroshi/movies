@@ -13,11 +13,13 @@ import android.widget.Toast
 import androidx.core.app.ShareCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.aeroshi.movies.AppPreferences
 import com.aeroshi.movies.R
 import com.aeroshi.movies.databinding.FragmentMovieDetailsBinding
 import com.aeroshi.movies.extensions.navigate
 import com.aeroshi.movies.viewmodels.MainViewModel
 import com.aeroshi.movies.views.MainActivity
+import com.google.gson.Gson
 import com.onurkaganaldemir.ktoastlib.KToast
 import com.squareup.picasso.Picasso
 
@@ -66,14 +68,14 @@ class MovieDetailsFragment : Fragment() {
         mBinding.lifecycleOwner = this
         try {
             Picasso.get()
-                .load(mMainViewModel.mSelectedMovie.value!!.multimedia.src)
+                .load(mMainViewModel.mSelectedMovie.value!!.multimedia?.src)
                 .into(mBinding.imageViewCover)
             mBinding.imageViewCover.scaleType = ImageView.ScaleType.CENTER_CROP
             mBinding.textViewTitle.text = mMainViewModel.mSelectedMovie.value!!.display_title
             mBinding.textViewDirector.text = mMainViewModel.mSelectedMovie.value!!.byline
             mBinding.textViewStoryline.text = mMainViewModel.mSelectedMovie.value!!.summary_short
         } catch (exception: Exception) {
-            navigate(R.id.navigate_movieDetailsFragment_to_loginFragment)
+            navigate(R.id.navigate_movieDetailsFragment_to_adapterFragment)
             KToast.errorToast(
                 mMainActivity,
                 getString(R.string.error_details),
@@ -87,24 +89,44 @@ class MovieDetailsFragment : Fragment() {
     }
 
     private fun setupClickEvents() {
+
         mBinding.buttonSaveFavorite.setOnClickListener {
-            if (mMainViewModel.mFavoriteMovies.value!!.contains(mMainViewModel.mSelectedMovie.value!!))
-                mMainViewModel.mFavoriteMovies.value!!.remove(mMainViewModel.mSelectedMovie.value!!)
-            else
-                mMainViewModel.mFavoriteMovies.value!!.add(mMainViewModel.mSelectedMovie.value!!)
+
+            mMainActivity.applicationContext.let { context ->
+
+                val movies = AppPreferences.getFavoritesMovies(context)
+
+                if (movies.contains(mMainViewModel.mSelectedMovie.value)) {
+                    movies.remove(mMainViewModel.mSelectedMovie.value!!)
+                    KToast.infoToast(
+                        mMainActivity, context.getString(R.string.favoriteRemove), Gravity.BOTTOM,
+                        Toast.LENGTH_LONG
+                    )
+                } else {
+                    movies.add(mMainViewModel.mSelectedMovie.value!!)
+                    KToast.infoToast(
+                        mMainActivity,
+                        context.getString(R.string.favoriteAdd),
+                        Gravity.BOTTOM,
+                        Toast.LENGTH_LONG
+                    )
+                }
+
+                AppPreferences.setFavoritesMovies(context, Gson().toJson(movies))
+            }
         }
 
         mBinding.buttonShare.setOnClickListener {
             ShareCompat.IntentBuilder.from(mMainActivity)
                 .setType("text/plain")
                 .setChooserTitle("Share Movie")
-                .setText(mMainViewModel.mSelectedMovie.value!!.link.url)
+                .setText(mMainViewModel.mSelectedMovie.value!!.link?.url)
                 .startChooser();
         }
 
         mBinding.buttonReadMore.setOnClickListener {
             val openURL = Intent(Intent.ACTION_VIEW)
-            openURL.data = Uri.parse(mMainViewModel.mSelectedMovie.value!!.link.url)
+            openURL.data = Uri.parse(mMainViewModel.mSelectedMovie.value!!.link?.url)
             startActivity(openURL)
         }
 

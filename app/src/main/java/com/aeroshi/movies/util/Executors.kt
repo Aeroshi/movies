@@ -2,8 +2,14 @@ package com.aeroshi.movies.util
 
 import java.util.concurrent.Executors
 
-private val IO_EXECUTOR = Executors.newSingleThreadExecutor()
+abstract class Executors {
 
-fun ioThread(f: () -> Unit) {
-    IO_EXECUTOR.execute(f)
+    companion object {
+        private val IO_EXECUTOR = Executors.newSingleThreadExecutor()
+
+        fun ioThread(f: () -> Unit) {
+            IO_EXECUTOR.execute(f)
+        }
+
+    }
 }
