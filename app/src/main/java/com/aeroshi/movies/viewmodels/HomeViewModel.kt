@@ -1,21 +1,26 @@
 package com.aeroshi.movies.viewmodels
 
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.aeroshi.movies.data.Movies
-import com.aeroshi.movies.data.Result
-import com.aeroshi.movies.model.repository.MovieReposiyory
+import com.aeroshi.movies.data.AppDatabase
+import com.aeroshi.movies.data.MoviesRepository
+import com.aeroshi.movies.data.entitys.Result
+import com.aeroshi.movies.model.repository.MovieRepository
+import com.aeroshi.movies.util.BaseSchedulerProvider
+import com.aeroshi.movies.util.Constants.Companion.KEY
 import com.aeroshi.movies.util.ErrorType
-import com.google.gson.Gson
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.aeroshi.movies.util.Executors.Companion.ioThread
+import com.aeroshi.movies.util.MoviesUtil.Companion.moviesJsonParser
+import com.aeroshi.movies.util.SchedulerProvider
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
-import io.reactivex.schedulers.Schedulers
 
 class HomeViewModel(
-    private val mRepository: MovieReposiyory = MovieReposiyory()
+    private val mRepository: MovieRepository = MovieRepository(),
+    private val mScheduler: BaseSchedulerProvider = SchedulerProvider()
 ) : ViewModel() {
     companion object {
         private const val TAG = "HomeViewModel"
@@ -25,8 +30,6 @@ class HomeViewModel(
 
     val mMoviesResult = MutableLiveData<Pair<ArrayList<Result>?, ErrorType>>()
     val mLoading = MutableLiveData(true)
-    val mItens = MutableLiveData<Int>().apply { value = 20 }
-
 
     override fun onCleared() {
         super.onCleared()
@@ -36,19 +39,19 @@ class HomeViewModel(
     fun clearDisposables() = mCompositeDisposable.clear()
 
 
-    fun doMovies() {
+    fun doMovies(context: Context, items: Int = 20) {
         mLoading.postValue(true)
         mCompositeDisposable.add(
             mRepository
-                .getMovies("ZpiYxUtmBL38osoMCsnJAVTcdnBF13QD", mItens.value!!)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
+                .doMovies(KEY, items)
+                .subscribeOn(mScheduler.io())
+                .observeOn(mScheduler.ui())
                 .subscribeBy(
                     onSuccess = { jsonResult ->
                         try {
-                            val gson = Gson()
-                            val movies = gson.fromJson(jsonResult, Movies::class.java)
-                            mMoviesResult.value = Pair(movies.results, ErrorType.NONE)
+                            val movies = moviesJsonParser(jsonResult)
+                            saveMoviesOnDb(context, movies)
+                            mMoviesResult.value = Pair(movies, ErrorType.NONE)
                         } catch (exception: Exception) {
                             mLoading.value = false
                             exception.stackTrace
@@ -62,6 +65,16 @@ class HomeViewModel(
                     }
                 )
         )
+    }
+
+    private fun saveMoviesOnDb(context: Context, movies: ArrayList<Result>) {
+        ioThread {
+            val configManagerRepository =
+                MoviesRepository.getInstance(AppDatabase.getInstance(context).MoviesDao())
+
+            configManagerRepository.insertMovies(movies)
+
+        }
     }
 
 }

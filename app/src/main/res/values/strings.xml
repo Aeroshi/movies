@@ -9,4 +9,7 @@
     <string name="error_movies">Error on get movies, refresh and try again.</string>
     <string name="error_details">Error on set details movie!!</string>
     <string name="favorites">Favorites</string>
+    <string name="home">Home</string>
+    <string name="favoriteRemove">Movie removed from favorites!</string>
+    <string name="favoriteAdd">Movie added to favorites!</string>
 </resources>
