@@ -73,9 +73,8 @@ class FavoritesFragment : Fragment() {
         setAdapter()
     }
 
-    private fun getFavoritesMovies() {
+    fun getFavoritesMovies() {
         val favoritesMovies = AppPreferences.getFavoritesMovies(mMainActivity.applicationContext)
-        logDebug(TAG, favoritesMovies.toString())
         mAdapter.create(favoritesMovies)
     }
 

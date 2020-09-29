@@ -20,6 +20,8 @@
         android:label="AdapterFragment" >
         <action
             android:id="@+id/navigate_adapterFragment_to_movieDetailsFragment"
-            app:destination="@id/movieDetailsFragment" />
+            app:destination="@id/movieDetailsFragment"
+            app:launchSingleTop="false"
+            app:popUpToInclusive="false" />
     </fragment>
 </navigation>

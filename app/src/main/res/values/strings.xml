@@ -12,4 +12,5 @@
     <string name="home">Home</string>
     <string name="favoriteRemove">Movie removed from favorites!</string>
     <string name="favoriteAdd">Movie added to favorites!</string>
+    <string name="favoriteUpdated">Updated favorites!</string>
 </resources>

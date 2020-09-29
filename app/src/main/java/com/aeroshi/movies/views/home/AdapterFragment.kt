@@ -45,6 +45,14 @@ class AdapterFragment : Fragment() {
         return mBinding.root
     }
 
+    override fun onResume() {
+        super.onResume()
+            requireActivity().supportFragmentManager.fragments.forEach { fragment ->
+                if (fragment is FavoritesFragment) {
+                    fragment.getFavoritesMovies()
+                }
+        }
+    }
 
     private fun isMainViewModelInitialized() = ::mMainViewModel.isInitialized
 

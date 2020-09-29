@@ -50,26 +50,20 @@ class MoviesAdapter(
                 selectedMovies.forEach {
                     if (movies.contains(it)) {
                         movies.remove(it)
-                        KToast.infoToast(
-                            activity, context.getString(R.string.favoriteRemove), Gravity.BOTTOM,
-                            Toast.LENGTH_LONG
-                        )
                     } else {
                         movies.add(it)
-                        KToast.infoToast(
-                            activity, context.getString(R.string.favoriteAdd),
-                            Gravity.BOTTOM,
-                            Toast.LENGTH_LONG
-                        )
                     }
-
                 }
                 AppPreferences.setFavoritesMovies(context, Gson().toJson(movies))
                 if (adapterType == AdapterType.FAVORITE) {
                     this.movies = movies
                     notifyDataSetChanged()
                 }
-
+                KToast.infoToast(
+                    activity, context.getString(R.string.favoriteUpdated),
+                    Gravity.BOTTOM,
+                    Toast.LENGTH_LONG
+                )
             }
         }
         mode.finish()
