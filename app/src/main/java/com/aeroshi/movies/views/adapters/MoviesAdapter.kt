@@ -1,24 +1,31 @@
 package com.aeroshi.movies.views.adapters
 
-import android.content.Context
 import android.util.Log
 import android.view.*
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.aeroshi.movies.AppPreferences
 import com.aeroshi.movies.R
-import com.aeroshi.movies.data.Result
+import com.aeroshi.movies.data.entitys.Result
+import com.aeroshi.movies.util.enuns.AdapterType
 import com.aeroshi.movies.viewmodels.MainViewModel
 import com.aeroshi.movies.views.MainActivity
 import com.aeroshi.movies.views.adapters.viewHolders.MovieViewHolder
+import com.google.gson.Gson
+import com.onurkaganaldemir.ktoastlib.KToast
 import com.squareup.picasso.Picasso
 
+
 class MoviesAdapter(
-    private val context: Context,
     private val mMainViewModel: MainViewModel,
-    private val activity: MainActivity
+    private val activity: MainActivity,
+    private val adapterType: AdapterType,
 ) :
     RecyclerView.Adapter<MovieViewHolder>(), ActionMode.Callback {
+
+    private val context = activity.applicationContext
 
     private val inflater: LayoutInflater by lazy { LayoutInflater.from(context) }
 
@@ -39,12 +46,24 @@ class MoviesAdapter(
     override fun onActionItemClicked(mode: ActionMode, item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_save -> {
+                val movies = AppPreferences.getFavoritesMovies(context)
                 selectedMovies.forEach {
-                    if (mMainViewModel.mFavoriteMovies.value!!.contains(it))
-                        mMainViewModel.mFavoriteMovies.value!!.remove(it)
-                    else
-                        mMainViewModel.mFavoriteMovies.value!!.add(it)
+                    if (movies.contains(it)) {
+                        movies.remove(it)
+                    } else {
+                        movies.add(it)
+                    }
                 }
+                AppPreferences.setFavoritesMovies(context, Gson().toJson(movies))
+                if (adapterType == AdapterType.FAVORITE) {
+                    this.movies = movies
+                    notifyDataSetChanged()
+                }
+                KToast.infoToast(
+                    activity, context.getString(R.string.favoriteUpdated),
+                    Gravity.BOTTOM,
+                    Toast.LENGTH_LONG
+                )
             }
         }
         mode.finish()
@@ -66,7 +85,7 @@ class MoviesAdapter(
         val currentMovie = movies[position]
         try {
             Picasso.get()
-                .load(movies[position].multimedia.src)
+                .load(movies[position].multimedia?.src)
                 .into(holder.imageViewMovie)
             holder.imageViewMovie.scaleType = ImageView.ScaleType.CENTER_CROP
         } catch (exception: Exception) {
@@ -97,13 +116,18 @@ class MoviesAdapter(
             else {
                 mMainViewModel.mSelectedMovie.value = movies[position]
                 Navigation.findNavController(it)
-                    .navigate(R.id.navigate_action_loginFragment_to_movieDetailsFragment)
+                    .navigate(R.id.navigate_adapterFragment_to_movieDetailsFragment)
             }
         }
     }
 
     fun update(movies: ArrayList<Result>) {
         this.movies.addAll(movies)
+        notifyDataSetChanged()
+    }
+
+    fun create(movies: ArrayList<Result>) {
+        this.movies = movies
         notifyDataSetChanged()
     }
 

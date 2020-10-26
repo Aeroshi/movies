@@ -1,0 +1,448 @@
+{
+  "status": "OK",
+  "copyright": "Copyright (c) 2020 The New York Times Company. All Rights Reserved.",
+  "has_more": true,
+  "num_results": 20,
+  "results": [
+    {
+      "display_title": "Alone",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Jeannette Catsoulis",
+      "headline": "‘Alone’ Review: Catch Her if You Can",
+      "summary_short": "An emotionally fragile young woman takes a terrifying road trip in John Hyams’s bare-bones thriller.",
+      "publication_date": "2020-09-17",
+      "opening_date": "2020-09-18",
+      "date_updated": "2020-09-24 16:44:17",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/17/movies/alone-review.html",
+        "suggested_link_text": "Read the New York Times Review of Alone"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/15/arts/alone1/alone1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Way I See It",
+      "mpaa_rating": "PG-13",
+      "critics_pick": 0,
+      "byline": "Glenn Kenny",
+      "headline": "‘The Way I See It’ Review: Hailing Days Not Too Far Past",
+      "summary_short": "Pete Souza, the White House photographer for the Obama administration, casts a warm eye on the past and a cold eye on the present in this Dawn Porter documentary.",
+      "publication_date": "2020-09-17",
+      "opening_date": "2020-09-18",
+      "date_updated": "2020-09-21 16:44:01",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/17/movies/the-way-i-see-it-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Way I See It"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/17/arts/17wayiseeit-art/merlin_176876025_f8ef3d49-352c-4ad7-944a-bb027dc8e762-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Blackbird",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "Jeannette Catsoulis",
+      "headline": "‘Blackbird’ Review: The Goodbye Girl",
+      "summary_short": "Susan Sarandon plays a dying matriarch hosting her family one last time in Roger Michell’s vacant tear-jerker.",
+      "publication_date": "2020-09-17",
+      "opening_date": "2020-09-18",
+      "date_updated": "2020-09-24 16:44:16",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/17/movies/blackbird-review.html",
+        "suggested_link_text": "Read the New York Times Review of Blackbird"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/18/arts/blackbird1/blackbird1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Antebellum",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "A.O. Scott",
+      "headline": "‘Antebellum’ Review: Look Away, Dixie Land",
+      "summary_short": "Janelle Monáe stars in a muddled attempt to revisit the horrors of American slavery.",
+      "publication_date": "2020-09-16",
+      "opening_date": "2020-09-18",
+      "date_updated": "2020-09-16 21:30:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/16/movies/antebellum-review-janelle-monae.html",
+        "suggested_link_text": "Read the New York Times Review of Antebellum"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/18/arts/16ANTEBELLUM-1/16ANTEBELLUM-1-mediumThreeByTwo210-v3.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Devil All the Time",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "Manohla Dargis",
+      "headline": "‘The Devil All the Time’ Review: Down-Home Livin’ and Dyin’",
+      "summary_short": "In this period drama, Tom Holland plays a country boy surrounded by Gothic ghouls, including Robert Pattinson’s preacher man.",
+      "publication_date": "2020-09-16",
+      "opening_date": "2020-09-16",
+      "date_updated": "2020-09-16 11:04:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/16/movies/the-devil-all-the-time-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Devil All the Time"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/18/arts/16devil/16devil-mediumThreeByTwo210-v2.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Secrets We Keep",
+      "mpaa_rating": "R",
+      "critics_pick": 0,
+      "byline": "Ben Kenigsberg",
+      "headline": "‘The Secrets We Keep’ Review: Confessions All Around",
+      "summary_short": "A possible case of mistaken identity has a dark fallout for two couples in post-World War II America.",
+      "publication_date": "2020-09-15",
+      "opening_date": "2020-09-16",
+      "date_updated": "2020-09-24 16:44:15",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/15/movies/the-secrets-we-keep-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Secrets We Keep"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/15/arts/15thesecretswekeep/merlin_176875782_8e78f475-42a1-4374-a984-9d1e059d185c-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "#Alive",
+      "mpaa_rating": "",
+      "critics_pick": 1,
+      "byline": "Elisabeth Vincentelli",
+      "headline": "‘#Alive’ Review: From Great Graphics, to Graphic",
+      "summary_short": "A laid back gamer is homebound with no food, no weapons, and zombies knocking at the door in this spirited Korean twist on siege movies.",
+      "publication_date": "2020-09-11",
+      "opening_date": "2020-09-08",
+      "date_updated": "2020-09-11 17:56:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/11/movies/alive-review.html",
+        "suggested_link_text": "Read the New York Times Review of #Alive"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/alive1/alive1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Buoyancy",
+      "mpaa_rating": "Not Rated",
+      "critics_pick": 1,
+      "byline": "Manohla Dargis",
+      "headline": "‘Buoyancy’ Review: Enduring Horrors on the Sea, and Struggling to Survive",
+      "summary_short": "In this sobering, moving drama, a Cambodian teenager runs away from home and is sold into slavery on a Thai fishing boat.",
+      "publication_date": "2020-09-10",
+      "opening_date": null,
+      "date_updated": "2020-09-10 13:10:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/buoyancy-review.html",
+        "suggested_link_text": "Read the New York Times Review of Buoyancy"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/00buoyancy/merlin_176671917_2333f7ad-5845-4114-97ac-312c3344011d-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Coastal Elites",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Amy Nicholson",
+      "headline": "‘Coastal Elites’ Review: Confined Confessions",
+      "summary_short": "This collection of monologues written by Paul Rudnick initially for the stage, has been adapted for the screen.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-12",
+      "date_updated": "2020-09-11 02:52:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/coastal-elites-review.html",
+        "suggested_link_text": "Read the New York Times Review of Coastal Elites"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/coastal1/coastal1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Suspensión",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Ben Kenigsberg",
+      "headline": "‘Suspension’ Review: Roads to Nowhere",
+      "summary_short": "This documentary looks at a stretch of road in Colombia known as “the springboard of death.”",
+      "publication_date": "2020-09-10",
+      "opening_date": null,
+      "date_updated": "2020-09-10 21:00:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/suspension-review.html",
+        "suggested_link_text": "Read the New York Times Review of Suspensión"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/10/arts/10suspension/merlin_176671569_7f54158e-eaa0-428c-ad69-965affe50efe-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "I Am Woman",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Jeannette Catsoulis",
+      "headline": "‘I Am Woman’ Review: Singing Against Sexism",
+      "summary_short": "Unjoo Moon’s film is a superficial hustle through the career of Helen Reddy and the recording of her most famous song.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-11",
+      "date_updated": "2020-09-10 14:56:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/i-am-woman-review.html",
+        "suggested_link_text": "Read the New York Times Review of I Am Woman"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/10/arts/iamwoman1/iamwoman1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Black Boys",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Maya Phillips",
+      "headline": "‘Black Boys’ Review: Young Lives in the Balance",
+      "summary_short": "This documentary addresses the dehumanization of Black boys by attempting the reverse: reconstructing them to show they are worth the care they are denied.",
+      "publication_date": "2020-09-10",
+      "opening_date": null,
+      "date_updated": "2020-09-10 13:04:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/black-boys-review.html",
+        "suggested_link_text": "Read the New York Times Review of Black Boys"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/09/arts/black1/black1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Our Time Machine",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Glenn Kenny",
+      "headline": "‘Our Time Machine’ Review: A Picture of the Past",
+      "summary_short": "In this documentary, the Chinese artist Maleonn enlists his aging parents, both artists themselves, in an ambitious memory play.",
+      "publication_date": "2020-09-10",
+      "opening_date": null,
+      "date_updated": "2020-09-10 11:04:07",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/our-time-machine-review.html",
+        "suggested_link_text": "Read the New York Times Review of Our Time Machine"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/10/arts/10ourtimemachine-art/10ourtimemachine-art-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Unpregnant",
+      "mpaa_rating": "PG-13",
+      "critics_pick": 0,
+      "byline": "Natalia Winkelman",
+      "headline": "‘Unpregnant’ Review: Friendship Is a Long and Winding Road",
+      "summary_short": "Former besties reunite for a road trip in this teen buddy comedy, which is the second movie this year to feature young women crossing state lines to obtain an abortion.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-10",
+      "date_updated": "2020-09-10 11:04:06",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/unpregnant-review.html",
+        "suggested_link_text": "Read the New York Times Review of Unpregnant"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/09/arts/unpregnant1/merlin_176671872_6b2188c1-c2a5-40ed-8edb-3a7fe05188ff-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Red, White & Wasted",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Jeannette Catsoulis",
+      "headline": "‘Red, White & Wasted’ Review: Dirty Driving",
+      "summary_short": "A beloved swampland subculture is under threat in this raucous yet melancholy documentary.",
+      "publication_date": "2020-09-10",
+      "opening_date": null,
+      "date_updated": "2020-09-10 11:04:03",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/red-white-wasted-review.html",
+        "suggested_link_text": "Read the New York Times Review of Red, White & Wasted"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/red1/red1-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Space Dogs",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Teo Bugbee",
+      "headline": "‘Space Dogs’ Review: No Dogs Go to Heaven",
+      "summary_short": "This documentary uses the lives and legends of Moscow’s street dogs to present a brutal vision of humanity and nature.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-11",
+      "date_updated": "2020-09-10 11:04:05",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/space-dogs-review.html",
+        "suggested_link_text": "Read the New York Times Review of Space Dogs"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/10/arts/10spacedogs-art2/10spacedogs-art2-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Jimmy Carter: Rock & Roll President",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Glenn Kenny",
+      "headline": "‘Jimmy Carter Rock & Roll President’ Review: A Musically Enlightened Commander in Chief",
+      "summary_short": "Bob Dylan, Rosanne Cash, Willie Nelson, Garth Brooks and more celebrate the 39th U.S. president in this documentary.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-09",
+      "date_updated": "2020-09-10 11:04:05",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/jimmy-carter-rock-roll-president-review.html",
+        "suggested_link_text": "Read the New York Times Review of Jimmy Carter: Rock & Roll President"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/10jimmycarter-art/10jimmycarter-art-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Rent-A-Pal",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Glenn Kenny",
+      "headline": "‘Rent-A-Pal’ Review: You Don’t Want to Borrow This VHS Tape",
+      "summary_short": "Set in the 1990s, this thriller features Wil Wheaton — on a videotape — as a bearded, sweater-vest wearing “friend” to a lonely man.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-11",
+      "date_updated": "2020-09-10 11:04:09",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/rent-a-pal-review.html",
+        "suggested_link_text": "Read the New York Times Review of Rent-A-Pal"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/10/arts/10rentapal/10rentapal-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "Sibyl",
+      "mpaa_rating": "",
+      "critics_pick": 0,
+      "byline": "Jeannette Catsoulis",
+      "headline": "‘Sibyl’ Review: Diagnosing Problems, and Creating More",
+      "summary_short": "A troubled psychotherapist becomes unhealthily embroiled in a patient’s life in this unhinged melodrama.",
+      "publication_date": "2020-09-10",
+      "opening_date": "2020-09-11",
+      "date_updated": "2020-09-10 20:42:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/10/movies/sibyl-review.html",
+        "suggested_link_text": "Read the New York Times Review of Sibyl"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/09/arts/sybil1/merlin_176672283_a9687174-7875-4a45-891a-b0ff6d9445a7-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    },
+    {
+      "display_title": "The Social Dilemma",
+      "mpaa_rating": "PG-13",
+      "critics_pick": 0,
+      "byline": "Devika Girish",
+      "headline": "‘The Social Dilemma’ Review: Unplug and Run",
+      "summary_short": "This documentary from Jeff Orlowski explores how addiction and privacy breaches are features, not bugs, of social media platforms.",
+      "publication_date": "2020-09-09",
+      "opening_date": "2020-09-09",
+      "date_updated": "2020-09-09 11:04:02",
+      "link": {
+        "type": "article",
+        "url": "http://www.nytimes.com/2020/09/09/movies/the-social-dilemma-review.html",
+        "suggested_link_text": "Read the New York Times Review of The Social Dilemma"
+      },
+      "multimedia": {
+        "type": "mediumThreeByTwo210",
+        "src": "https://static01.nyt.com/images/2020/09/11/arts/09socialdilemma-art/09socialdilemma-art-mediumThreeByTwo210.jpg",
+        "width": 210,
+        "height": 140
+      }
+    }
+  ]
+}
